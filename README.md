@@ -1,6 +1,26 @@
+#intro
+This is a fully integrated WebService. That utilizes the understanding of Rest. The BackEnd is mocked through a serious of complex service layers in angular. That all wrap around a full fledged Data service layer. Which the outmost components can not see for data protection purposes. The APP was designed with data in mind. Using full scale typescript interfaces, The service Layers could easily be picked up and moved into a nestJS service with a rest api and controler layer format. 
+
+It was in that in mind that i designed this service. We respect JSON formatting utilizing json.Stringfy to insert in local storage while parsing it on removal. 
+
+each object has an interface. Each interface is utilized to mutate the returned data to its respective map. 
+
+this makes components simplestic and easy to use. Merely fetching user inputed data from the forms update the concerned object in storage. 
+
+There is an HTTP layer for further intergration.
+
+Additional thought was given for things such as: Deposites, UserProfiles. 
+
+The abbility to have a guest and/or a profile though with the given time constraints i was not able to fully implement the additional features. 
+
+I will be able to discuss the full possibilities and future itterations that i plan to perform on this project.
+
+
 # ATM
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+
+
 
 ## Development server
 
