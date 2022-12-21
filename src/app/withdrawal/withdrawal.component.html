@@ -1,0 +1,19 @@
+
+  
+   <div class="p-grid">
+    <div class="col-offset-5">
+  <div  [formGroup]="withdrawalForm">
+   
+              <label for="amount" class="font" >Withdrawal: </label>
+              <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">$</span>
+            <input id="amount"  class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary" formControlName="amount" type="text" (input)="enableWithdraw()" placeholder="$00.00" pInputText>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+  
+  
+  

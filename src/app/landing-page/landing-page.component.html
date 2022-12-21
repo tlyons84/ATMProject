@@ -1,0 +1,66 @@
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+<p-card >
+  <ng-template pTemplate="header">
+    <div class="p-grid">
+    <div class="col-offset-5 font">
+     {{headerText}}
+    </div>
+  </div>
+  </ng-template>
+<div *ngIf="show"> 
+    <app-welcome-screen (pageObjEmitter)="selectPage($event)"></app-welcome-screen>
+</div>
+  
+  <div *ngIf="withdrawalBool">
+    <app-withdrawal #withdrawal [submit] ="submit" (disabledEvent)="this.enableOrDisableSubmit($event)" (pageObjEmitter)="selectPage($event)"></app-withdrawal>
+  </div>
+  <div *ngIf="deposite">
+    <app-deposite></app-deposite>
+  </div>
+  <div  *ngIf="profile">
+    <app-user-profile></app-user-profile>
+  </div>
+  <div *ngIf="history">
+    <app-history></app-history>
+  </div>
+  <div *ngIf="restockBool">
+    <app-restock #restock (disabledEvent)="this.enableOrDisableSubmit($event)" (pageObjEmitter)="selectPage($event)"></app-restock>
+  </div>
+  <ng-template pTemplate="footer">
+    <ng-container *ngIf="!show">
+    <div class="col-offset-5">
+      <ng-container *ngIf="submit">
+    <p-button label="{{btnSubTitle}}" (click)="onSubmit()" [disabled]="enable"  icon="pi pi-check"></p-button></ng-container>
+    <p-button label="Main Menu" (click)="onMainMenu()" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+  </div>
+</ng-container>
+</ng-template>
+</p-card>
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="p-grid">
+    <div class="col-offset-5 font">
+     Status Of The ATM.
+     Total Value: ${{totalValue}}.00
+    </div>
+    </div></ng-template>
+    <p-table  [columns]="cols" [value]="inventory">
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+              <th *ngFor="let col of columns">
+                  {{col.header}}
+              </th>
+          </tr>  
+      </ng-template>
+      <ng-template  pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+         <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+         </td> 
+      </tr>
+      </ng-template>
+  </p-table>
+</p-card>
+    </div></div></div>

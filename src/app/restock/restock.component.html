@@ -1,0 +1,12 @@
+
+<div [formGroup]="restockFormGroup">
+    <div class="p-grid">
+    <div class="col-offset-5">
+    <p-multiSelect defaultLabel="Select Denom"  [filter]="false" class="MultiSelect"[(ngModel)]="selectedDenomValues" (onChange)="enableRestock()" formControlName="DenomintationSelection" [options]="options" optionLabel="Denom" optionValue="value" ></p-multiSelect>
+    </div>
+    <div class="col-offset-5">
+    <input formControlName="amountPerDenomination" style="width:150px" type="text"   (input)="enableRestock()" pInputText placeholder="Amount to Restock">
+    </div>
+  </div>
+</div>
+
